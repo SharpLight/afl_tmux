@@ -1,0 +1,13 @@
+{
+    "commandline":"<target> @@",
+    "name":"fuzz",
+    "in":"<input/dir>",
+    "out":"<output/dir>",
+    "instances":
+    [   
+        "afl-fuzz -M master",
+        "afl-fuzz -S slave1",
+        "afl-fuzz -S slave2 -- <target_asan> @@",
+        "afl-fuzz -S slave3 -- <target_ubsan> @@"
+    ]
+}
